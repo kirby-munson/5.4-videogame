@@ -21,7 +21,7 @@ Goodguy.prototype.speak = function(){
 
 
 function BadGuy(config){
-  CuteAnimals.call(this, config);
+  Characters.call(this, config);
 }
 
 BadGuy.prototype = new Character();
