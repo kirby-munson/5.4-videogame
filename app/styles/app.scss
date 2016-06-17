@@ -20,10 +20,24 @@ img {
   max-width: 100%;
 }
 
+.wrapper {
+  background-image: url("../images/iron-yard-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  padding: 0;
+}
+
 .good-template,
 .bad-template {
-  height: 300px;
-  width: 300px;
-  border: 2px solid red;
-  background-color: green;
+  height: 600px;
+  width: 400px;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bad-template {
+  float: right;
 }
