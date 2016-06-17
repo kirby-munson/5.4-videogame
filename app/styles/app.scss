@@ -12,6 +12,10 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
   box-sizing: border-box;
 }
 
+body{
+  background-image: url('../app/images/iron-yard-bg.jpg');
+}
+
 img {
   max-width: 100%;
 }

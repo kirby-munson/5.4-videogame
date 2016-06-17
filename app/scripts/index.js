@@ -7,51 +7,34 @@ var badTemplate = require('../templates/bad-template.hbs');
 $(function(){
 
   var goodGuys = [
-<<<<<<< f18891cb73f2b21d1cb8588279358118347fec42
-    new models.GoodGuy({name: 'Dan', image: 'app/images/frontend-dan.png'}),
-    new models.GoodGuy({name: 'Rob', image: 'app/images/frontend-rob.png'})
-=======
-    new models.GoodGuy({name: 'Dan', image: '../app/images/head_kirby_videogame.png'}),
-    new models.GoodGuy({name: 'Kara', image: '../app/images/head_kirby_videogame.png'}),
-    new models.GoodGuy({name: 'Kurt', image: '../app/images/head_kirby_videogame.png'}),
-    new models.GoodGuy({name: 'Rob', image: '../app/images/head_kirby_videogame.png'}),
-    new models.GoodGuy({name: 'Andy', image: '../app/images/head_kirby_videogame.png'}),
-    new models.GoodGuy({name: 'Kirby', image: '../app/images/head_kirby_videogame.png'}),
-    new models.GoodGuy({name: 'Christian', image: '../app/images/head_kirby_videogame.png'}),
-    new models.GoodGuy({name: 'Matthew', image: '../app/images/head_kirby_videogame.png'}),
-    new models.GoodGuy({name: 'David', image: '../app/images/head_kirby_videogame.png'})
->>>>>>> A: various js updates
+    new models.GoodGuy({name: 'Dan', image: '../app/images/frontend-dan.png'}),
+    new models.GoodGuy({name: 'Rob', image: '../app/images/frontend-rob.png'}),
+    new models.GoodGuy({name: 'Kara', image: '../app/images/frontend-kara.png'}),
+    new models.GoodGuy({name: 'Kurt', image: '../app/images/frontend-kurt.png'}),
+    new models.GoodGuy({name: 'Andy', image: '../app/images/frontend-andy.png'}),
+    new models.GoodGuy({name: 'Kirby', image: '../app/images/frontend-kirby.png'}),
+    new models.GoodGuy({name: 'Christian', image: '../app/images/frontend-christian.png'}),
+    new models.GoodGuy({name: 'Matthew', image: '../app/images/frontend-matthew.png'}),
+    new models.GoodGuy({name: 'David', image: '../app/images/frontend-david.png'})
   ];
 
   //console.log(goodGuys);
   var badGuys = [
-<<<<<<< f18891cb73f2b21d1cb8588279358118347fec42
-    new models.BadGuy({name: 'Emily', image: 'app/images/backend-emily.png'})
-=======
-    new models.BadGuy({name: 'Joel', image: 'https://unsplash.it/110/110'})
->>>>>>> A: various js updates
+    new models.BadGuy({name: 'Joel', weapon: 'python', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Emily', weapon: 'python', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Bill', weapon: 'python', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Hope', weapon: 'python', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Rayn', weapon: 'python', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Davis', weapon: 'python', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'John', weapon: 'python', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Eileen', weapon: 'python', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Chuck', weapon: 'python', image: '../app/images/backend-emily.png'}),
   ];
 
 goodGuys.forEach(function(character, index, array){
   $('#characters').append('<option value="' + index + '">' + character.name + '</option>');
-  //console.log(character);
 });
-// _.each(goodGuys, function(goodGuy){
-//   var html = goodTemplate(goodGuy);
-//   $('js-puppies').append(html);
-//}
 
-
-// $('js-cute-puppy').on('click', function(event){
-//   event.preventDefault();
-//
-//   var $puppyImage = $(this);
-//   var puppyName = $puppyImage.data('name');
-//   favoritePuppy_.filter(puppies, {'name': puppyName});
-//
-//   alert('My name is' + favoritePuppy.name + 'and i have a' favoritePuppy.speak());
-//
-// }
   var goodContext = {'goodGuys': goodGuys};
   var badContext = {'badGuys': badGuys};
   var $charSelect = $('#characters');
@@ -63,12 +46,10 @@ goodGuys.forEach(function(character, index, array){
     //console.log($clickedChar.getAttribute('value'));
 
     goodGuys.forEach(function(displayedChar, index, array){
-      if($clickedChar.getAttribute('value') === displayedChar){
-        return $clickedChar;
+      if($clickedChar.getAttribute('value') == index){
+        console.log(displayedChar);
+        $('.good-template').html(goodTemplate({name: displayedChar.name, image: displayedChar.image}));
       }
-    $('.good-template').html(goodTemplate({name: displayedChar.name, image: displayedChar.image}));
-    //console.log(displayedChar.name);
-    //console.log(displayedChar.image);
 
 
     });
@@ -80,7 +61,6 @@ goodGuys.forEach(function(character, index, array){
       $("#selectError").html('');
     }
 
-    //$('.bad-template').html(badTemplate(badContext));
 
   });
 
