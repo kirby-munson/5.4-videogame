@@ -7,13 +7,13 @@ var badTemplate = require('../templates/bad-template.hbs');
 $(function(){
 
   var goodGuys = [
-    new models.GoodGuy({name: 'Dan', image: 'http://unsplash.it/100/100'}),
-    new models.GoodGuy({name: 'Faith', image: 'http://unsplash.it/100/100'})
+    new models.GoodGuy({name: 'Dan', image: 'app/images/frontend-dan.png'}),
+    new models.GoodGuy({name: 'Rob', image: 'app/images/frontend-rob.png'})
   ];
 
 
   var badGuys = [
-    new models.BadGuy({name: 'Joel', image: 'http://unsplash.it/110/110'})
+    new models.BadGuy({name: 'Emily', image: 'app/images/backend-emily.png'})
   ];
 
 goodGuys.forEach(function(character, index, array){
