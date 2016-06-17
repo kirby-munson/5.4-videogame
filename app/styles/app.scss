@@ -20,6 +20,10 @@ img {
   max-width: 100%;
 }
 
+.bg {
+  padding: 0;
+}
+
 .wrapper {
   background-image: url("../images/iron-yard-bg.jpg");
   background-size: cover;
@@ -29,10 +33,17 @@ img {
   padding: 0;
 }
 
+.header {
+  text-align: center;
+  color: white;
+  h1 {
+  font-size: 90px;
+
+  }
+}
+
 .good-template,
 .bad-template {
-  height: 600px;
-  width: 400px;
   display: inline-block;
   margin: 0 auto;
   text-align: center;
@@ -40,4 +51,16 @@ img {
 
 .bad-template {
   float: right;
+}
+
+.fighters {
+  color: white;
+  img {
+    height: 500px;
+  }
+}
+
+.attack-button {
+  margin: 0 auto;
+  background: none;
 }
