@@ -61,8 +61,8 @@ goodGuys.forEach(function(character, index, array){
     var myOpponent;
     badGuys.forEach(function(displayedCharBad, index, array){
       if(enemyNumber == index){
-        console.log(enemyNumber);
-        console.log(displayedCharBad.name);
+        //console.log(enemyNumber);
+        //console.log(displayedCharBad.name);
         myOpponent = displayedCharBad;
       }
     });
@@ -76,7 +76,27 @@ goodGuys.forEach(function(character, index, array){
       $("#selectError").html();
     }
   });
-  $('.attack-button').on('click', function(){
+  $('.attack-button').on('click', function(event){
+    event.preventDefault();
+    var healthBad = document.getElementById('health-bad');
+    var healthGood = document.getElementById('health-good');
+    var goodDamage = (Math.floor(Math.random()*25) + 1);
+    var badDamage = (Math.floor(Math.random()*25) + 1);
+
+    console.log(healthBad);
+    console.log(healthGood);
     $('audio').attr({src: 'images/Laser Blasts-SoundBible.com-108608437.wav'});
+
+    if(healthBad.style.width > 0){
+      healthBad.style.width -= goodDamage;
+    } else if(healthBad.style.width = 0){
+      winner.style.display = block;
+    };
+    if(healthGood.style.width > 0){
+      healthGood.style.width -= badDamage;
+    } else if(healthGood.style.width = 0){
+      winner.style.display = block;
+    };
+
   });
 });

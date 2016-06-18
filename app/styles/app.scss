@@ -97,6 +97,7 @@ div.logo{
   margin-bottom: 0;
 }
 
+<<<<<<< 2c5eccaf3da234f6083e6a7638cf2b75643775cd
 .title{
 font-family: 'Slabo 27px', serif;
 text-transform: uppercase;
@@ -130,11 +131,22 @@ line-height: 50px;
   height: 20px;
   width: 180px;
   background-color: #00A89F;
+  #health-good,
+  #health-bad {
+    height: 16px;
+    max-width: 176px;
+    background-color: green;
+    border-radius: 8px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 10;
+  }
 }
 
-.health{
-  display: inline;
-}
+// .health{
+//   display: inline;
+// }
 
 .attack-button img{
   width: 125px;
@@ -152,4 +164,3 @@ select{
 
 #selectError{
   color: black;
-}
