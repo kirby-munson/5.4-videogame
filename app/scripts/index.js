@@ -62,6 +62,7 @@ goodGuys.forEach(function(character, index, array){
     if(this.selectedIndex == ""){
       $("#selectError").html('Please select a Coder to do battle with!');
       $('.good-template').html(goodTemplate());
+      $('.bad-template').html(badTemplate());
     } else {
       $("#selectError").html('');
     }
