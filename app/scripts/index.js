@@ -32,14 +32,13 @@ $(function(){
   ];
 
 
-console.log(enemyNumber);
 goodGuys.forEach(function(character, index, array){
   $('#characters').append('<option value="' + index + '">' + character.name + '</option>');
 });
 
 
-  // var goodContext = {'goodGuys': goodGuys};
-  // var badContext = {'badGuys': badGuys};
+
+  var myFighter;
   var enemyNumber;
   var $charSelect = $('#characters');
   //console.log(goodContext);
@@ -50,7 +49,6 @@ goodGuys.forEach(function(character, index, array){
     // console.log($clickedChar);
     // console.log($clickedChar.getAttribute('value'));
 
-    var myFighter;
 
     goodGuys.forEach(function(displayedChar, index, array){
       if($clickedChar.getAttribute('value') == index){
@@ -58,14 +56,6 @@ goodGuys.forEach(function(character, index, array){
       }
     });
     $('.good-template').html(goodTemplate({name: myFighter.name, weapon: myFighter.weapon, image: myFighter.image}));
-
-    if(this.selectedIndex == ""){
-      $("#selectError").html('Please select a Coder to do battle with!');
-      $('.good-template').html(goodTemplate());
-      $('.bad-template').html(badTemplate());
-    } else {
-      $("#selectError").html('');
-    }
 
 
     var myOpponent;
@@ -77,6 +67,16 @@ goodGuys.forEach(function(character, index, array){
       }
     });
     $('.bad-template').html(badTemplate({name: myOpponent.name, weapon: myOpponent.weapon, image: myOpponent.image}));
-  });
 
+    if(this.selectedIndex == ""){
+      $("#selectError").html('Please select a Coder to do battle with!');
+      $('.good-template').html(goodTemplate());
+      $('.bad-template').html(badTemplate());
+    } else {
+      $("#selectError").html();
+    }
+  });
+  $('.attack-button').on('click', function(){
+    $('audio').attr({src: 'images/Laser Blasts-SoundBible.com-108608437.wav'});
+  });
 });
