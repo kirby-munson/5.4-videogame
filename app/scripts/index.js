@@ -7,28 +7,28 @@ var badTemplate = require('../templates/bad-template.hbs');
 $(function(){
 
   var goodGuys = [
-    new models.GoodGuy({name: 'Dan', weapon: 'backbone', image: '../app/images/frontend-dan.png'}),
-    new models.GoodGuy({name: 'Kara', weapon: 'scope', image: '../app/images/frontend-kara.png'}),
-    new models.GoodGuy({name: 'Kurt',  weapon: 'iterators', image: '../app/images/frontend-kurt.png'}),
-    new models.GoodGuy({name: 'Rob', weapon: 'functions', image: '../app/images/frontend-rob.png'}),
-    new models.GoodGuy({name: 'Andy', weapon: 'variables', image: '../app/images/frontend-andy.png'}),
-    new models.GoodGuy({name: 'Kirby', weapon: 'constructors', image: '../app/images/frontend-kirby.png'}),
-    new models.GoodGuy({name: 'Christian', weapon: 'syntax', image: '../app/images/frontend-christian.png'}),
-    new models.GoodGuy({name: 'Matthew', weapon: 'handlebars', image: '../app/images/frontend-matt.png'}),
-    new models.GoodGuy({name: 'David', weapon:'css', image: '../app/images/frontend-david.png'})
+    new models.GoodGuy({name: 'Dan', weapon: 'Backbone', image: '../app/images/frontend-dan.png'}),
+    new models.GoodGuy({name: 'Kara', weapon: 'Scope', image: '../app/images/frontend-kara.png'}),
+    new models.GoodGuy({name: 'Kurt',  weapon: 'Iterators', image: '../app/images/frontend-kurt.png'}),
+    new models.GoodGuy({name: 'Rob', weapon: 'Functions', image: '../app/images/frontend-rob.png'}),
+    new models.GoodGuy({name: 'Andy', weapon: 'Variables', image: '../app/images/frontend-andy.png'}),
+    new models.GoodGuy({name: 'Kirby', weapon: 'Constructors', image: '../app/images/frontend-kirby.png'}),
+    new models.GoodGuy({name: 'Christian', weapon: 'Syntax', image: '../app/images/frontend-christian.png'}),
+    new models.GoodGuy({name: 'Matthew', weapon: 'Handlebars', image: '../app/images/frontend-matt.png'}),
+    new models.GoodGuy({name: 'David', weapon:'CSS', image: '../app/images/frontend-david.png'})
   ];
 
   //console.log(goodGuys);
   var badGuys = [
-    new models.BadGuy({name: 'Joel', weapon: 'full stack', image: '../app/images/backend-emily.png'}),
-    new models.BadGuy({name: 'Emily', weapon: 'egg', image: '../app/images/backend-emily.png'}),
-    new models.BadGuy({name: 'Bill', weapon: 'django', image: '../app/images/backend-emily.png'}),
-    new models.BadGuy({name: 'Hope', weapon: 'flask', image: '../app/images/backend-emily.png'}),
-    new models.BadGuy({name: 'Rayn', weapon: 'pandas', image: '../app/images/backend-emily.png'}),
-    new models.BadGuy({name: 'Davis', weapon: 'pickle', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Joel', weapon: 'Full Stack', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Emily', weapon: 'Egg', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Bill', weapon: 'Django', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Hope', weapon: 'Flask', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Rayn', weapon: 'Pandas', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Davis', weapon: 'Pickle', image: '../app/images/backend-emily.png'}),
     new models.BadGuy({name: 'John', weapon: 'BeautifulSoup', image: '../app/images/backend-emily.png'}),
-    new models.BadGuy({name: 'Eileen', weapon: 'itertools', image: '../app/images/backend-emily.png'}),
-    new models.BadGuy({name: 'Chuck', weapon: 'primary key', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Eileen', weapon: 'Itertools', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Chuck', weapon: 'Primary key', image: '../app/images/backend-emily.png'}),
   ];
 
 

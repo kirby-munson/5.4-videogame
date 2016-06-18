@@ -21,7 +21,7 @@ img {
 }
 
 .wrapper {
-  background-image: url("../images/iron-yard-bg.jpg");
+  background-image: url("../images/new_iron-yard-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -38,21 +38,26 @@ img {
   }
 }
 
+.good-template{
+  margin-left: 900px;
+}
+
 .good-template,
 .bad-template {
   display: inline-block;
   margin: 0 auto;
   text-align: center;
+  font-family: 'Slabo 27px', serif;
 }
 
 .bad-template {
-  float: right;
+  // float: right;
 }
 
 .fighters {
   color: white;
   img {
-    height: 500px;
+    height: 615px;
   }
 }
 
@@ -62,11 +67,14 @@ img {
 
 .attack-button {
   margin: 0 auto;
-  background: none;
   position: center;
+  margin-top: 650px;
+  margin-left: -120px;
+  background-color: #00A89F;
+  border-style: hidden;
 }
 
-button{
+button.btn{
   margin-left: 43%;
   background-color: black;
   margin-top: 0;
@@ -87,4 +95,61 @@ button{
 div.logo{
   margin-top: 200px;
   margin-bottom: 0;
+}
+
+.title{
+font-family: 'Slabo 27px', serif;
+text-transform: uppercase;
+vertical-align: middle;
+line-height: 50px;
+}
+
+.title-box{
+  background-color: rgba(225, 225, 225, 0.5);
+  display: block;
+  width: 300px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.side-bar{
+  background-color: rgba(225, 225, 225, 0.5);
+  height: 275px;
+  font-family: 'Slabo 27px', serif;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  margin-left: 45px;
+}
+
+.figter-info{
+  border: 1px solid white;
+}
+.health-bar{
+  margin: 10px auto;
+  height: 20px;
+  width: 180px;
+  background-color: #00A89F;
+}
+
+.health{
+  display: inline;
+}
+
+.attack-button img{
+  width: 125px;
+}
+
+select{
+  background: transparent;
+  font-family: 'Slabo 27px', serif;
+  color: #00A89F;
+  width: 150px;
+  height: 40px;
+  font-size: 18px;
+  border: 2px solid #00A89F;
+}
+
+#selectError{
+  color: black;
 }
