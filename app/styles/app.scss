@@ -54,10 +54,26 @@ img {
   margin-left: 150px;
 }
 
+.winner-template {
+  height: 900px;
+  width:400px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Slabo 27px', serif;
+}
+
 .fighters {
   color: white;
   img {
     height: 615px;
+  }
+}
+
+.fighters1 {
+  color: white;
+  img {
+    height: 815px;
   }
 }
 
@@ -98,10 +114,10 @@ div.logo{
 }
 
 .title{
-font-family: 'Slabo 27px', serif;
-text-transform: uppercase;
-vertical-align: middle;
-line-height: 50px;
+  font-family: 'Slabo 27px', serif;
+  text-transform: uppercase;
+  vertical-align: middle;
+  line-height: 50px;
 }
 
 .title-box{
@@ -168,4 +184,8 @@ select{
   margin-top: 20px;
   font-size: 16px;
   font-weight: bold;
+}
+
+.winner {
+  display: none;
 }

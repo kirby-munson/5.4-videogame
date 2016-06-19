@@ -36,7 +36,7 @@ goodGuys.forEach(function(character, index, array){
   $('#characters').append('<option value="' + index + '">' + character.name + '</option>');
 });
 
-
+  var winner;
   var myOpponent;
   var myFighter;
   var enemyNumber;
@@ -62,7 +62,7 @@ goodGuys.forEach(function(character, index, array){
     badGuys.forEach(function(displayedCharBad, index, array){
       if(enemyNumber == index){
         //console.log(enemyNumber);
-        console.log(displayedCharBad);
+        //console.log(displayedCharBad);
         myOpponent = displayedCharBad;
 
       }
@@ -80,47 +80,76 @@ goodGuys.forEach(function(character, index, array){
       $('.bad-template').css('display', 'inline-block');
       $("#selectError").html('');
     }
-  });
-  $('.attack-button').on('click', function(event){
-    event.preventDefault();
-    if(myOpponent) {
-      $(this).prop('disabled', true);
-    }
-    //console.log(healthBad);
-    //console.log(healthGood);
-    playAudio();
-    decreaseBadGuyHealth();
-    setTimeout(decreaseGoodGuyHealth, 1000);
-  });
 
 
-  function decreaseBadGuyHealth(){
-    var healthBad = $('#health-bad');
-    var goodDamage = (Math.floor(Math.random()*25) + 5);
-    if(healthBad.width() > 0){
-      var reducedHealthBad = healthBad.width() - goodDamage;
-      healthBad.width(Math.max(reducedHealthBad, 0));
-    }
-    if(healthBad.width() == 0){
-      setTimeout(window.location = 'winner.html', 200);
+    $('.attack-button').on('click', function(event){
+      event.preventDefault();
+      if(myOpponent) {
+        $(this).prop('disabled', true);
       }
-  };
+      //console.log(healthBad);
+      //console.log(healthGood);
+      //playAudio1();
+      decreaseBadGuyHealth();
+      setTimeout(decreaseGoodGuyHealth, 700);
+      setTimeout(whoWon, 1900);
+    });
 
-  function decreaseGoodGuyHealth(){
-    var healthGood = $('#health-good');
-    var badDamage = (Math.floor(Math.random()*25) + 5);
-    if(healthGood.width() > 0){
-      var reducedHealthGood = healthGood.width() - badDamage;
-      healthGood.width(Math.max(reducedHealthGood, 0));
-      playAudio();
-      $('.attack-button').prop('disabled', false);
-    }
-    if(healthGood.width() == 0){
-      setTimeout(window.location = 'winner.html', 200);
+    var healthBad;
+    function decreaseBadGuyHealth(){
+      healthBad = $('#health-bad');
+      var goodDamage = (Math.floor(Math.random()*25) + 5);
+      if(healthBad.width() > 0){
+        var reducedHealthBad = healthBad.width() - goodDamage;
+        healthBad.width(Math.max(reducedHealthBad, 0));
+        playAudio1();
       }
-  };
+    };
 
-  function playAudio(){
-    $('audio').attr({src: 'images/Laser Blasts-SoundBible.com-108608437.wav'});
-  };
+    var healthGood;
+    function decreaseGoodGuyHealth(){
+      healthGood = $('#health-good');
+      var badDamage = (Math.floor(Math.random()*25) + 5);
+
+      if(healthGood.width() > 0){
+        var reducedHealthGood = healthGood.width() - badDamage;
+        healthGood.width(Math.max(reducedHealthGood, 0));
+        $('.attack-button').prop('disabled', false);
+        playAudio2();
+      }
+    };
+
+    console.log(myFighter);
+    console.log(myOpponent);
+    function whoWon(){
+      if(healthBad.width() == 0){
+        winner = myFighter;
+        $('.winner-good').removeClass('hidden');
+        $('.winner-bad').addClass('hidden');
+        $('.bad-template').hide();
+        $('.attack-button').prop('disabled', true);
+        $('.side-bar').hide();
+        }
+      if(healthGood.width() == 0){
+        winner = myOpponent;
+        $('.winner-bad').removeClass('hidden');
+        $('.winner-good').addClass('hidden');
+        $('.good-template').hide();
+        $('.attack-button').prop('disabled', true);
+        $('.side-bar').hide();
+        }
+        console.log(winner);
+    };
+
+    $('.play-again').on('click', function(){
+      $('.side-bar').show();
+    })
+
+    function playAudio1(){
+      $('audio').attr({src: 'images/Laser Blasts-SoundBible.com-108608437.wav'});
+    };
+    function playAudio2(){
+      $('audio').attr({src: 'images/End_Fx-Mike_Devils-724852498.wav'});
+    };
+  });
 });
