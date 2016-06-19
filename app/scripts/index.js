@@ -37,7 +37,7 @@ goodGuys.forEach(function(character, index, array){
 });
 
 
-
+  var myOpponent;
   var myFighter;
   var enemyNumber;
   var $charSelect = $('#characters');
@@ -58,45 +58,69 @@ goodGuys.forEach(function(character, index, array){
     $('.good-template').html(goodTemplate({name: myFighter.name, weapon: myFighter.weapon, image: myFighter.image}));
 
 
-    var myOpponent;
+
     badGuys.forEach(function(displayedCharBad, index, array){
       if(enemyNumber == index){
         //console.log(enemyNumber);
-        //console.log(displayedCharBad.name);
+        console.log(displayedCharBad);
         myOpponent = displayedCharBad;
+
       }
     });
     $('.bad-template').html(badTemplate({name: myOpponent.name, weapon: myOpponent.weapon, image: myOpponent.image}));
 
     if(this.selectedIndex == ""){
       $("#selectError").html('Please select a Coder to do battle with!');
-      $('.good-template').html(goodTemplate());
-      $('.bad-template').html(badTemplate());
+      $('.good-template').hide();
+      $('.bad-template').hide();
+      // $('.good-template').html(goodTemplate());
+      // $('.bad-template').html(badTemplate());
     } else {
-      $("#selectError").html();
+      $('.good-template').css('display', 'inline-block');
+      $('.bad-template').css('display', 'inline-block');
+      $("#selectError").html('');
     }
   });
   $('.attack-button').on('click', function(event){
     event.preventDefault();
-    var healthBad = document.getElementById('health-bad');
-    var healthGood = document.getElementById('health-good');
-    var goodDamage = (Math.floor(Math.random()*25) + 1);
-    var badDamage = (Math.floor(Math.random()*25) + 1);
-
-    console.log(healthBad);
-    console.log(healthGood);
-    $('audio').attr({src: 'images/Laser Blasts-SoundBible.com-108608437.wav'});
-
-    if(healthBad.style.width > 0){
-      healthBad.style.width -= goodDamage;
-    } else if(healthBad.style.width = 0){
-      winner.style.display = block;
-    };
-    if(healthGood.style.width > 0){
-      healthGood.style.width -= badDamage;
-    } else if(healthGood.style.width = 0){
-      winner.style.display = block;
-    };
-
+    if(myOpponent) {
+      $(this).prop('disabled', true);
+    }
+    //console.log(healthBad);
+    //console.log(healthGood);
+    playAudio();
+    decreaseBadGuyHealth();
+    setTimeout(decreaseGoodGuyHealth, 1000);
   });
+
+
+  function decreaseBadGuyHealth(){
+    var healthBad = $('#health-bad');
+    var goodDamage = (Math.floor(Math.random()*25) + 5);
+    if(healthBad.width() > 0){
+      var reducedHealthBad = healthBad.width() - goodDamage;
+      healthBad.width(Math.max(reducedHealthBad, 0));
+    }
+    if(healthBad.width() == 0){
+      setTimeout(window.location = 'winner.html', 200);
+      }
+  };
+
+  function decreaseGoodGuyHealth(){
+    var healthGood = $('#health-good');
+    var badDamage = (Math.floor(Math.random()*25) + 5);
+    if(healthGood.width() > 0){
+      var reducedHealthGood = healthGood.width() - badDamage;
+      healthGood.width(Math.max(reducedHealthGood, 0));
+      playAudio();
+      $('.attack-button').prop('disabled', false);
+    }
+    if(healthGood.width() == 0){
+      setTimeout(window.location = 'winner.html', 200);
+      }
+  };
+
+  function playAudio(){
+    $('audio').attr({src: 'images/Laser Blasts-SoundBible.com-108608437.wav'});
+  };
 });

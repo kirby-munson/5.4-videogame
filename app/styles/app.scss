@@ -51,7 +51,7 @@ img {
 }
 
 .bad-template {
-  // float: right;
+  margin-left: 150px;
 }
 
 .fighters {
@@ -97,7 +97,6 @@ div.logo{
   margin-bottom: 0;
 }
 
-<<<<<<< 2c5eccaf3da234f6083e6a7638cf2b75643775cd
 .title{
 font-family: 'Slabo 27px', serif;
 text-transform: uppercase;
@@ -128,14 +127,16 @@ line-height: 50px;
 }
 .health-bar{
   margin: 10px auto;
-  height: 20px;
-  width: 180px;
+  height: 30px;
+  width: 200px;
   background-color: #00A89F;
+  position: relative;
+  border-radius: 8px;
   #health-good,
   #health-bad {
-    height: 16px;
-    max-width: 176px;
-    background-color: green;
+    height: 26px;
+    width: 196px;
+    background-color: #0059BD;
     border-radius: 8px;
     position: absolute;
     top: 2px;
@@ -164,3 +165,7 @@ select{
 
 #selectError{
   color: black;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
