@@ -20,14 +20,14 @@ $(function(){
 
   //console.log(goodGuys);
   var badGuys = [
-    new models.BadGuy({name: 'Joel', weapon: 'Full Stack', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Joel', weapon: 'Full Stack', image: '../app/images/backend-joel.png'}),
     new models.BadGuy({name: 'Emily', weapon: 'Egg', image: '../app/images/backend-emily.png'}),
-    new models.BadGuy({name: 'Bill', weapon: 'Django', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Bill', weapon: 'Django', image: '../app/images/backend-bill.png'}),
     new models.BadGuy({name: 'Hope', weapon: 'Flask', image: '../app/images/backend-emily.png'}),
     new models.BadGuy({name: 'Rayn', weapon: 'Pandas', image: '../app/images/backend-emily.png'}),
-    new models.BadGuy({name: 'Davis', weapon: 'Pickle', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Davis', weapon: 'Pickle', image: '../app/images/backend-davis.png'}),
     new models.BadGuy({name: 'John', weapon: 'BeautifulSoup', image: '../app/images/backend-emily.png'}),
-    new models.BadGuy({name: 'Eileen', weapon: 'Itertools', image: '../app/images/backend-emily.png'}),
+    new models.BadGuy({name: 'Eileen', weapon: 'Itertools', image: '../app/images/backend-eileen.png'}),
     new models.BadGuy({name: 'Chuck', weapon: 'Primary key', image: '../app/images/backend-emily.png'}),
   ];
 
