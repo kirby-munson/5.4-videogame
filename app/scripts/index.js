@@ -132,6 +132,7 @@ goodGuys.forEach(function(character, index, array){
         $('.attack-button').hide();
         $('.title-box').addClass('hidden');
         $('.side-bar').hide();
+        $('.smack-talk').html('My ' + winner.weapon + ' style is much stronger than your ' + myOpponent.weapon + ' style');
         }
       if(healthGood.width() == 0){
         winner = myOpponent;
@@ -141,8 +142,9 @@ goodGuys.forEach(function(character, index, array){
         $('.good-template').hide();
         $('.attack-button').hide();
         $('.side-bar').hide();
+        $('.smack-talk').html('My ' + winner.weapon + ' style is much stronger than your ' + myFighter.weapon + ' style');
         }
-        console.log(winner);
+        //console.log(winner);
     };
 
     $('.play-again').on('click', function(){
