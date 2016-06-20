@@ -20,13 +20,17 @@ img {
   padding: 0;
 }
 
-.wrapper {
+.background {
   background-image: url("../images/new_iron-yard-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
   padding: 0;
+}
+
+.white{
+  background-color: white;
 }
 
 .header {
@@ -45,7 +49,7 @@ img {
 .good-template,
 .bad-template {
   display: inline-block;
-  margin: 0 auto;
+  margin: -10px auto;
   text-align: center;
   font-family: 'Slabo 27px', serif;
 }
@@ -85,7 +89,7 @@ img {
   margin: 0 auto;
   position: center;
   margin-top: 650px;
-  margin-left: -120px;
+  margin-left: -90px;
   background-color: #00A89F;
   border-style: hidden;
 }
@@ -143,19 +147,19 @@ div.logo{
 }
 .health-bar{
   margin: 10px auto;
-  height: 30px;
+  height: 26px;
   width: 200px;
   background-color: #00A89F;
   position: relative;
   border-radius: 8px;
   #health-good,
   #health-bad {
-    height: 26px;
+    height: 20px;
     width: 196px;
     background-color: #0059BD;
     border-radius: 8px;
     position: absolute;
-    top: 2px;
+    top: 3px;
     left: 2px;
     z-index: 10;
   }
@@ -188,4 +192,11 @@ select{
 
 .winner {
   display: none;
+}
+
+.winner-good,
+.winner-bad{
+  margin: 0 auto;
+  font-family: 'Slabo 27px', serif;
+  color: #00A89F;
 }

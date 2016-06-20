@@ -126,16 +126,20 @@ goodGuys.forEach(function(character, index, array){
         winner = myFighter;
         $('.winner-good').removeClass('hidden');
         $('.winner-bad').addClass('hidden');
+        $('.wrapper').removeClass('background');
+        $('.winner-bad').addClass('white');
         $('.bad-template').hide();
-        $('.attack-button').prop('disabled', true);
+        $('.attack-button').hide();
+        $('.title-box').addClass('hidden');
         $('.side-bar').hide();
         }
       if(healthGood.width() == 0){
         winner = myOpponent;
         $('.winner-bad').removeClass('hidden');
         $('.winner-good').addClass('hidden');
+        $('.title-box').addClass('hidden');
         $('.good-template').hide();
-        $('.attack-button').prop('disabled', true);
+        $('.attack-button').hide();
         $('.side-bar').hide();
         }
         console.log(winner);
