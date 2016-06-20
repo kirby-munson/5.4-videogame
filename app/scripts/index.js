@@ -7,28 +7,28 @@ var badTemplate = require('../templates/bad-template.hbs');
 $(function(){
 
   var goodGuys = [
-    new models.GoodGuy({name: 'Dan', weapon: 'Backbone', image: '../app/images/frontend-dan.png'}),
-    new models.GoodGuy({name: 'Kara', weapon: 'Scope', image: '../app/images/frontend-kara.png'}),
-    new models.GoodGuy({name: 'Kurt',  weapon: 'Iterators', image: '../app/images/frontend-kurt.png'}),
-    new models.GoodGuy({name: 'Rob', weapon: 'Functions', image: '../app/images/frontend-rob.png'}),
-    new models.GoodGuy({name: 'Andy', weapon: 'Variables', image: '../app/images/frontend-andy.png'}),
-    new models.GoodGuy({name: 'Kirby', weapon: 'Constructors', image: '../app/images/frontend-kirby.png'}),
-    new models.GoodGuy({name: 'Christian', weapon: 'Syntax', image: '../app/images/frontend-christian.png'}),
-    new models.GoodGuy({name: 'Matthew', weapon: 'Handlebars', image: '../app/images/frontend-matt.png'}),
-    new models.GoodGuy({name: 'David', weapon:'CSS', image: '../app/images/frontend-david.png'})
+    new models.GoodGuy({name: 'Dan', weapon: 'Backbone', image: 'images/frontend-dan.png'}),
+    new models.GoodGuy({name: 'Kara', weapon: 'Scope', image: 'images/frontend-kara.png'}),
+    new models.GoodGuy({name: 'Kurt',  weapon: 'Iterators', image: 'images/frontend-kurt.png'}),
+    new models.GoodGuy({name: 'Rob', weapon: 'Functions', image: 'images/frontend-rob.png'}),
+    new models.GoodGuy({name: 'Andy', weapon: 'Variables', image: 'images/frontend-andy.png'}),
+    new models.GoodGuy({name: 'Kirby', weapon: 'Constructors', image: 'images/frontend-kirby.png'}),
+    new models.GoodGuy({name: 'Christian', weapon: 'Syntax', image: 'images/frontend-christian.png'}),
+    new models.GoodGuy({name: 'Matthew', weapon: 'Handlebars', image: 'images/frontend-matt.png'}),
+    new models.GoodGuy({name: 'David', weapon:'CSS', image: 'images/frontend-david.png'})
   ];
 
   //console.log(goodGuys);
   var badGuys = [
-    new models.BadGuy({name: 'Joel', weapon: 'Full Stack', image: '../app/images/backend-joel.png'}),
-    new models.BadGuy({name: 'Emily', weapon: 'Egg', image: '../app/images/backend-emily.png'}),
-    new models.BadGuy({name: 'Bill', weapon: 'Django', image: '../app/images/backend-bill.png'}),
-    new models.BadGuy({name: 'Hope', weapon: 'Flask', image: '../app/images/backend-hope.png'}),
-    new models.BadGuy({name: 'Rayn', weapon: 'Pandas', image: '../app/images/backend-rayn.png'}),
-    new models.BadGuy({name: 'Davis', weapon: 'Pickle', image: '../app/images/backend-davis.png'}),
-    new models.BadGuy({name: 'John', weapon: 'BeautifulSoup', image: '../app/images/backend-john.png'}),
-    new models.BadGuy({name: 'Eileen', weapon: 'Itertools', image: '../app/images/backend-eileen.png'}),
-    new models.BadGuy({name: 'Chuck', weapon: 'Primary key', image: '../app/images/backend-chuck.png'}),
+    new models.BadGuy({name: 'Joel', weapon: 'Full Stack', image: 'images/backend-joel.png'}),
+    new models.BadGuy({name: 'Emily', weapon: 'Egg', image: 'images/backend-emily.png'}),
+    new models.BadGuy({name: 'Bill', weapon: 'Django', image: 'images/backend-bill.png'}),
+    new models.BadGuy({name: 'Hope', weapon: 'Flask', image: 'images/backend-hope.png'}),
+    new models.BadGuy({name: 'Rayn', weapon: 'Pandas', image: 'images/backend-rayn.png'}),
+    new models.BadGuy({name: 'Davis', weapon: 'Pickle', image: 'images/backend-davis.png'}),
+    new models.BadGuy({name: 'John', weapon: 'BeautifulSoup', image: 'images/backend-john.png'}),
+    new models.BadGuy({name: 'Eileen', weapon: 'Itertools', image: 'images/backend-eileen.png'}),
+    new models.BadGuy({name: 'Chuck', weapon: 'Primary key', image: 'images/backend-chuck.png'}),
   ];
 
 
@@ -82,59 +82,63 @@ goodGuys.forEach(function(character, index, array){
     }
 
 
-    $('.attack-button').on('click', function(event){
-      event.preventDefault();
-      if(myOpponent) {
-        $(this).prop('disabled', true);
-      }
-      //console.log(healthBad);
-      //console.log(healthGood);
-      //playAudio1();
-      decreaseBadGuyHealth();
-      setTimeout(decreaseGoodGuyHealth, 700);
-      setTimeout(whoWon, 1900);
-    });
 
 
 
-    console.log(myFighter);
-    console.log(myOpponent);
-    function whoWon(){
-      if(healthBad.width() == 0){
-        winner = myFighter;
-        $('.winner-good').removeClass('hidden');
-        $('.winner-bad').addClass('hidden');$('.winner-bad').addClass('hidden');
-        $('.winner-good').addClass('middle');
-        $('.wrapper').removeClass('background');
-        $('.winner-bad').addClass('white');
-        $('.bad-template').hide();
-        $('.attack-button').hide();
-        $('.title-box').addClass('hidden');
-        $('.side-bar').hide();
-        $('.smack-talk').html('My ' + winner.weapon + ' style is much stronger than your ' + myOpponent.weapon + ' style');
-        }
-      if(healthGood.width() == 0){
-        winner = myOpponent;
-        $('.winner-bad').removeClass('hidden');
-        $('.winner-good').addClass('hidden');
-        $('.winner-bad').addClass('middle');
-        $('.wrapper').removeClass('background');
-        $('.winner-bad').addClass('white');
-        $('.title-box').addClass('hidden');
-        $('.good-template').hide();
-        $('.attack-button').hide();
-        $('.side-bar').hide();
-        $('.smack-talk').html('My ' + winner.weapon + ' style is much stronger than your ' + myFighter.weapon + ' style');
-        }
-        //console.log(winner);
-    };
 
-    $('.play-again').on('click', function(){
-      $('.side-bar').show();
-    });
 
 
   });
+
+  $('.attack-button').on('click', function(event){
+    event.preventDefault();
+    if(myOpponent) {
+      $(this).prop('disabled', true);
+    }
+    //console.log(healthBad);
+    //console.log(healthGood);
+    //playAudio1();
+    decreaseBadGuyHealth();
+    setTimeout(decreaseGoodGuyHealth, 700);
+    setTimeout(whoWon, 1900);
+  });
+
+  console.log(myFighter);
+  console.log(myOpponent);
+  function whoWon(){
+    if(healthBad.width() == 0){
+      winner = myFighter;
+      $('.winner-good').removeClass('hidden');
+      $('.winner-bad').addClass('hidden');$('.winner-bad').addClass('hidden');
+      $('.winner-good').addClass('middle');
+      $('.wrapper').removeClass('background');
+      $('.winner-bad').addClass('white');
+      $('.bad-template').hide();
+      $('.attack-button').hide();
+      $('.title-box').addClass('hidden');
+      $('.side-bar').hide();
+      $('.smack-talk').html('My ' + winner.weapon + ' style is much stronger than your ' + myOpponent.weapon + ' style');
+      }
+    if(healthGood.width() == 0){
+      winner = myOpponent;
+      $('.winner-bad').removeClass('hidden');
+      $('.winner-good').addClass('hidden');
+      $('.winner-bad').addClass('middle');
+      $('.wrapper').removeClass('background');
+      $('.winner-bad').addClass('white');
+      $('.title-box').addClass('hidden');
+      $('.good-template').hide();
+      $('.attack-button').hide();
+      $('.side-bar').hide();
+      $('.smack-talk').html('My ' + winner.weapon + ' style is much stronger than your ' + myFighter.weapon + ' style');
+      }
+      //console.log(winner);
+  };
+
+  $('.play-again').on('click', function(){
+    $('.side-bar').show();
+  });
+
   var healthBad;
   function decreaseBadGuyHealth(){
     healthBad = $('#health-bad');
