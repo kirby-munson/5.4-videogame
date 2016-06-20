@@ -138,6 +138,8 @@ goodGuys.forEach(function(character, index, array){
         winner = myOpponent;
         $('.winner-bad').removeClass('hidden');
         $('.winner-good').addClass('hidden');
+        $('.wrapper').removeClass('background');
+        $('.winner-bad').addClass('white');
         $('.title-box').addClass('hidden');
         $('.good-template').hide();
         $('.attack-button').hide();
