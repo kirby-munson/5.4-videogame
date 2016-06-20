@@ -125,7 +125,8 @@ goodGuys.forEach(function(character, index, array){
       if(healthBad.width() == 0){
         winner = myFighter;
         $('.winner-good').removeClass('hidden');
-        $('.winner-bad').addClass('hidden');
+        $('.winner-bad').addClass('hidden');$('.winner-bad').addClass('hidden');
+        $('.winner-good').addClass('middle');
         $('.wrapper').removeClass('background');
         $('.winner-bad').addClass('white');
         $('.bad-template').hide();
@@ -138,6 +139,7 @@ goodGuys.forEach(function(character, index, array){
         winner = myOpponent;
         $('.winner-bad').removeClass('hidden');
         $('.winner-good').addClass('hidden');
+        $('.winner-bad').addClass('middle');
         $('.wrapper').removeClass('background');
         $('.winner-bad').addClass('white');
         $('.title-box').addClass('hidden');

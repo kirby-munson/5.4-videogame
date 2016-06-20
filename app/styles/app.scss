@@ -94,27 +94,27 @@ img {
   border-style: hidden;
 }
 
-button.btn{
-  margin-left: 43%;
+button.btn.start{
   background-color: black;
-  margin-top: 0;
   border-radius: 0.5px;
   color: white;
-}
-
-.btn{
   border-radius: 0;
-  width: 155px;
+  width: 135px;
+  display: block;
+  margin: 0 auto;
 }
 
-.btn:hover{
+.row a {
+  text-decoration: none;
+}
+
+button.btn.start:hover{
   color: #00A89F;
 }
 
 
 div.logo{
-  margin-top: 200px;
-  margin-bottom: 0;
+margin: 200px auto 0 auto;
 }
 
 .title{
@@ -199,4 +199,21 @@ select{
   margin: 0 auto;
   font-family: 'Slabo 27px', serif;
   color: #00A89F;
+  text-align: center;
+}
+
+.play-again{
+  background-color: #00A89F;
+  border-style: hidden;
+  color: white;
+  text-align: center;
+}
+
+.smack-talk{
+  text-align: center;
+  font-family: 'Slabo 27px', serif;
+}
+
+.middle{
+  margin: 0 auto;
 }
