@@ -95,29 +95,7 @@ goodGuys.forEach(function(character, index, array){
       setTimeout(whoWon, 1900);
     });
 
-    var healthBad;
-    function decreaseBadGuyHealth(){
-      healthBad = $('#health-bad');
-      var goodDamage = (Math.floor(Math.random()*25) + 5);
-      if(healthBad.width() > 0){
-        var reducedHealthBad = healthBad.width() - goodDamage;
-        healthBad.width(Math.max(reducedHealthBad, 0));
-        playAudio1();
-      }
-    };
 
-    var healthGood;
-    function decreaseGoodGuyHealth(){
-      healthGood = $('#health-good');
-      var badDamage = (Math.floor(Math.random()*25) + 5);
-
-      if(healthGood.width() > 0){
-        var reducedHealthGood = healthGood.width() - badDamage;
-        healthGood.width(Math.max(reducedHealthGood, 0));
-        $('.attack-button').prop('disabled', false);
-        playAudio2();
-      }
-    };
 
     console.log(myFighter);
     console.log(myOpponent);
@@ -153,13 +131,36 @@ goodGuys.forEach(function(character, index, array){
 
     $('.play-again').on('click', function(){
       $('.side-bar').show();
-    })
+    });
 
-    function playAudio1(){
-      $('audio').attr({src: 'images/Laser Blasts-SoundBible.com-108608437.wav'});
-    };
-    function playAudio2(){
-      $('audio').attr({src: 'images/End_Fx-Mike_Devils-724852498.wav'});
-    };
+
   });
+  var healthBad;
+  function decreaseBadGuyHealth(){
+    healthBad = $('#health-bad');
+    var goodDamage = (Math.floor(Math.random()*(25 - 5) + 5));
+    if(healthBad.width() > 0){
+      var reducedHealthBad = healthBad.width() - goodDamage;
+      healthBad.width(Math.max(reducedHealthBad, 0));
+      playAudio1();
+    }
+  };
+
+  var healthGood;
+  function decreaseGoodGuyHealth(){
+    healthGood = $('#health-good');
+    var badDamage = (Math.floor(Math.random()*(25 - 5) + 5));
+    if(healthGood.width() > 0){
+      var reducedHealthGood = healthGood.width() - badDamage;
+      healthGood.width(Math.max(reducedHealthGood, 0));
+      $('.attack-button').prop('disabled', false);
+      playAudio2();
+    }
+  };
+  function playAudio1(){
+    $('audio').attr({src: 'images/Laser Blasts-SoundBible.com-108608437.wav'});
+  };
+  function playAudio2(){
+    $('audio').attr({src: 'images/End_Fx-Mike_Devils-724852498.wav'});
+  };
 });
