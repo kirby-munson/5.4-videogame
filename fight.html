@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fight</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+    <div class="bg container-fluid">
+      <div class="wrapper background">
+        <div class="row">
+          <div>
+            <header class="header">
+              <div class="title-box">
+                <h2 class="title">The &#60; Code &#62; War</h2>
+              </div>
+            </header>
+          </div>
+        </div>
+        <div class="row">
+          <div class="side-bar col-md-2">
+            <h4>Welcome to the Iron Yard Code Wars. May the odds be ever in your favor!</h4>
+            <br />
+            <h4>Choose Your Character:</h4>
+            <select id="characters" name="select">
+              <option value="">Choose Coder</option>
+            </select>
+            <div id="selectError"></div>
+          </div>
+        <!-- <div class="row"> -->
+          <div class="col-md-4">
+            <div class="good-template">
+            </div>
+            <div class="winner-bad hidden middle">
+              <h1>WINNER!</h1>
+              <p class="smack-talk"></p>
+              <a href="index.html"><button class="btn-default play-again">Play Again</button></a>
+            </div>
+          </div>
+          <button class="attack-button col-md-1"><img src="../app/images/attack3.png" />
+          </button>
+          <audio class="laser" src="" autoplay></audio>
+
+          <div class="col-md-4">
+            <div class="bad-template">
+            </div>
+            <div class="winner-good hidden middle">
+              <h1>WINNER!</h1>
+              <p class="smack-talk"></p>
+              <a href="index.html"><button class="btn-default play-again">Play Again</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bundle.js"></script>
+  </body>
+</html>
